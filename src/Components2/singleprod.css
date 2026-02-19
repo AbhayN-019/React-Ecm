@@ -1,0 +1,148 @@
+/* Main Container */
+.singleprod-container {
+  background-color: #f3f3f3;
+  padding: 100px 10px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Wrapper */
+.singleprod-wrapper {
+  background-color: #ffffff;
+  display: flex;
+  gap: 50px;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Product Image Section */
+.singleprod-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleprod-image img {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Product Details Section */
+.singleprod-details {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.singleprod-details h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Rating */
+.singleprod-rating {
+  color: #ffa41c;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+/* Price */
+.singleprod-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #b12704;
+  margin-bottom: 15px;
+}
+
+/* Category */
+.singleprod-details p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* Description */
+.singleprod-desc {
+  margin-top: 15px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Buttons Wrapper */
+.singleprod-btns {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Add to Cart Button */
+.add-btn {
+  background-color: #ffd814;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #f7ca00;
+}
+
+/* Shop Now Button */
+.buy-btn {
+  background-color: #ffa41c;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #fa8900;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .singleprod-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px;
+  }
+
+  .singleprod-image img {
+    height: 250px;
+  }
+
+  .singleprod-details h1 {
+    font-size: 20px;
+  }
+
+  .singleprod-price {
+    font-size: 22px;
+  }
+
+  .singleprod-btns {
+    flex-direction: column;
+  }
+
+  .add-btn,
+  .buy-btn {
+    width: 100%;
+  }
+}

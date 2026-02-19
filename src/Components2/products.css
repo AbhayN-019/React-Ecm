@@ -1,0 +1,110 @@
+/* Product Container - FLEX instead of GRID */
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+  background: #f3f3f3;
+  justify-content: center;
+}
+
+/* Product Card */
+.prod-card {
+  position: relative;
+  width: 240px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover Lift */
+.prod-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Product Image */
+.prod-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin: 15px 0;
+  transition: transform 0.3s ease;
+}
+
+/* Image Zoom on Hover */
+.prod-card:hover .prod-img {
+  transform: scale(1.05);
+}
+
+/* Title */
+.prod-card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Text */
+.prod-card p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #333;
+}
+
+/* Add To Cart Button (Hidden Initially) */
+.prod-card button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60px;
+  width: 85%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #00ac7c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+/* Slide Up On Hover */
+.prod-card:hover button {
+  bottom: 15px;
+  opacity: 1;
+}
+
+/* Button Hover */
+.prod-card button:hover {
+  background: #008f67;
+}
+
+/* Click Effect */
+.prod-card button:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-box {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .prod-card {
+    width: 180px;
+  }
+
+  .prod-img {
+    height: 140px;
+  }
+}

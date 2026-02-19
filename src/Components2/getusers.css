@@ -1,0 +1,18 @@
+.card-box{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+.usr-img{
+    width: 150px;
+}
+.card{
+    border: none;
+}
+.card h2{
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 200;
+}
