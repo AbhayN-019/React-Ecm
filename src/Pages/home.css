@@ -3,7 +3,6 @@
   background-color: #f3f3f3;
 }
 
-/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -45,7 +44,6 @@
   font-weight: bold;
 }
 
-/* CATEGORY SECTION */
 .category-section {
   padding: 40px 60px;
 }
@@ -60,7 +58,6 @@
   gap: 25px;
 }
 
-/* CATEGORY CARD */
 .category-card {
   background: white;
   border-radius: 12px;
@@ -81,13 +78,11 @@
   text-align: center;
 }
 
-/* HOVER EFFECT */
 .category-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* INFO STRIP */
 .info-strip {
   background: #232f3e;
   color: white;

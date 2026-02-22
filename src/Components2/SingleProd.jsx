@@ -3,52 +3,63 @@ import "./singleprod.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const SingleProduct = () => {
   const [prod, setProd] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+
   const { id } = useParams();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
+
   useEffect(() => {
     const getSingleProd = async () => {
       try {
-        const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
+        const res = await axios.get(
+          `https://fakestoreapi.com/products/${id}`
+        );
         setProd(res.data);
-        console.log(res.data);
       } catch (err) {
         console.error(err);
       }
     };
     getSingleProd();
   }, [id]);
-  const handleShopNow = () => {
-    handleCart(); // Add to cart first
-    navigate("/cart"); // Then move to cart page
-  };
 
-  const handleCart = (item) => {
+  const handleCart = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((prod) => prod.id === item.id);
+
+    const existingProduct = cart.find(
+      (item) => item.id === prod.id
+    );
+
     if (existingProduct) {
-      existingProduct.quantity += 1;
+      existingProduct.quantity += quantity;
     } else {
       cart.push({
-        id: item.id,
-        title: item.title,
-        price: item.price,
-        image: item.image,
-        quantity: 1,
+        id: prod.id,
+        title: prod.title,
+        price: prod.price,
+        image: prod.image,
+        quantity: quantity,
       });
     }
+
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Added to cart");
+    alert(`${quantity} item(s) added to cart`);
   };
+
+  // const handleShopNow = () => {
+  //   handleCart();
+  //   navigate("/cart");
+  // };
+
   if (!prod) return <h2>Loading....</h2>;
+
   return (
     <div className="singleprod-container">
       <div className="singleprod-wrapper">
         <div className="singleprod-image">
-          <img src={prod.image} alt="pic" />
+          <img src={prod.image} alt="product" />
         </div>
 
         <div className="singleprod-details">
@@ -58,17 +69,33 @@ const SingleProduct = () => {
             ⭐ {prod.rating.rate} ({prod.rating.count} Quantity)
           </div>
 
-          <div className="singleprod-price">₹ {prod.price}</div>
+          <div className="singleprod-price">
+            ₹ {prod.price}
+          </div>
 
           <p>Category: {prod.category}</p>
 
-          <p className="singleprod-desc">{prod.description}</p>
+          <p className="singleprod-desc">
+            {prod.description}
+          </p>
+
+          {/* Buttons + Quantity */}
           <div className="singleprod-btns">
             <button className="add-btn" onClick={handleCart}>
               Add to <FaCartArrowDown />
             </button>
 
-            <button className="buy-btn" onClick={handleShopNow}>
+            <input
+              type="number"
+              min="1"
+              value={quantity}
+              onChange={(e) =>
+                setQuantity(Number(e.target.value))
+              }
+              className="qty-input"
+            />
+
+            <button className="buy-btn">
               Shop Now
             </button>
           </div>
@@ -77,4 +104,5 @@ const SingleProduct = () => {
     </div>
   );
 };
+
 export default SingleProduct;

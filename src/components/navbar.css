@@ -1,4 +1,4 @@
-.navbar-container {
+/* .navbar-container {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
@@ -103,6 +103,122 @@
 
   }
   .hamb{
+    display: block;
+  }
+} */
+
+/* ============================= */
+/* AMAZON-STYLE NAVBAR */
+/* ============================= */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 0px;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
+  transition: background 0.3s ease;
+}
+
+/* Logo / Brand */
+.navbar-logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Nav Elements Container */
+.nav-element-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Nav Links */
+.nav-element-container a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-element-container a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--text-color);
+}
+
+/* Buttons */
+.nav-element-container button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: all 0.2s ease;
+}
+
+.nav-element-container button:hover {
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+/* Theme Toggle */
+.theme-btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  opacity: 0.9;
+}
+
+/* Hamburger */
+.hamb {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 996px) {
+
+  .nav-element-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    padding: 20px 0;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-element-container.open {
+    display: flex;
+  }
+
+  .hamb {
     display: block;
   }
 }

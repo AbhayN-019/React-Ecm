@@ -12,3 +12,62 @@ html, body, #root {
 .main-content {
   flex: 1;
 }
+/* ========================= */
+/* THEME VARIABLES */
+/* ========================= */
+
+body.light {
+  --bg-color: #f4f6f9;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --btn-bg: #0095f6;
+  --btn-text: #ffffff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --nav-bg: #1f1f1f;
+  --btn-bg: #333333;
+  --btn-text: #ffffff;
+}
+
+/* ========================= */
+/* GLOBAL APPLY */
+/* ========================= */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar-container {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+}
+
+/* Cards (Profile, Products etc.) */
+.profile-card,
+.product-card,
+.cart-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Buttons */
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+}
+
+/* Theme Button */
+.theme-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}

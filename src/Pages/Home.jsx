@@ -26,6 +26,38 @@ const categories = [
     title: "Jewelry",
     img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e",
   },
+  {
+    title: "Beauty,Health...",
+    img: "https://images.unsplash.com/photo-1713824096348-c1956e6da321?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0eSUyQ2hlYWx0aGNhcmV8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    title: "Books,Comics...",
+    img: "https://images.unsplash.com/photo-1720659201133-4a79bb11d7d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGJvb2tzJTIwYW5kJTIwY29taWNzfGVufDB8fDB8fHww",
+  },
+  {
+    title: "Movies,Music...",
+    img: "https://plus.unsplash.com/premium_photo-1710961232986-36cead00da3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fE1vdmllcyUyQ211c2ljfGVufDB8fDB8fHww",
+  },
+  {
+    title: "Video Games",
+    img: "https://images.unsplash.com/photo-1593277992013-05e17a5f417d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHZpZGVvJTIwZ2FtZXN8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    title: "Toys & Gifts",
+    img: "https://images.unsplash.com/photo-1706178674070-c7d00c2c4d7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95cyUyMGFuZCUyMGdpZnRzfGVufDB8fDB8fHww",
+  },
+  {
+    title: "Automobile Accesories",
+    img: "https://images.unsplash.com/photo-1700224217413-7dc588b86be6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fEF1dG9tb2JpbGUlMjBhY2Nlc3Nvcmllc3xlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    title: "Sportswear",
+    img: "https://images.unsplash.com/photo-1637666532931-b835a227b955?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    title: "And More...",
+    img: "https://media.licdn.com/dms/image/sync/v2/D4D27AQEgRzyZxT-8_w/articleshare-shrink_800/B4DZdgIxkuHwAM-/0/1749664602885?e=2147483647&v=beta&t=G6F_07uuRPRtjaMQJ-y6QM6xFtGOAXsE3TKuI85qyYY",
+  },
 ];
 
 
@@ -37,7 +69,6 @@ const Home = () => {
   return (
     <div className="home">
 
-      {/* HERO BANNER */}
       <div className="hero">
         <img
           src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=1600&q=80"
@@ -49,8 +80,6 @@ const Home = () => {
           <button onClick={Move2Products}>Shop Now</button>
         </div>
       </div>
-
-      {/* CATEGORIES */}
       <section className="category-section">
         <h2>Shop by Category</h2>
 
@@ -64,7 +93,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FEATURED INFO */}
       <section className="info-strip">
         <div>
           <h3>Free Delivery</h3>

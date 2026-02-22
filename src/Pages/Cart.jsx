@@ -9,22 +9,44 @@ const Cart = () => {
     setCartItems(cart);
   }, []);
 
-  const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0,
-  );  
-
-  const removeItem = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
+  const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-    alert('Item removed from cart successfully')
   };
+
+  const increaseQty = (id) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    );
+    updateCart(updatedCart);
+  };
+
+  const decreaseQty = (id) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === id && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    );
+    updateCart(updatedCart);
+  };
+
+  const removeItem = (id) => {
+    const updatedCart = cartItems.filter(
+      (item) => item.id !== id
+    );
+    updateCart(updatedCart);
+  };
+
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="cart-container">
-      <br />
-      <br />
+      <br /><br />
       <h1>Your Shopping Cart</h1>
 
       {cartItems.length === 0 ? (
@@ -33,23 +55,43 @@ const Cart = () => {
         <>
           {cartItems.map((item) => (
             <div className="cart-row" key={item.id}>
-              <img src={item.image} alt={item.title} className="cart-img" />
+              <img
+                src={item.image}
+                alt={item.title}
+                className="cart-img"
+              />
 
               <div className="cart-details">
                 <h3>{item.title}</h3>
                 <p className="cart-price">₹{item.price}</p>
 
                 <div className="qty-box">
-                  <button>-</button>
+                  <button
+                    className="qty-btn"
+                    onClick={() => decreaseQty(item.id)}
+                  >
+                    −
+                  </button>
+
                   <span>{item.quantity}</span>
-                  <button>+</button>
+
+                  <button
+                    className="qty-btn"
+                    onClick={() => increaseQty(item.id)}
+                  >
+                    +
+                  </button>
                 </div>
 
                 <button
                   className="delete-btn"
                   onClick={() => removeItem(item.id)}
                 >
-                  Delete
+                  Remove
+                </button>
+                <button className="order-btn"
+                >
+                  Place Order
                 </button>
               </div>
 
@@ -59,7 +101,10 @@ const Cart = () => {
             </div>
           ))}
 
-          <h2 className="cart-total">Sub-Total: ₹{totalPrice.toFixed(2)}</h2>
+          <h2 className="cart-total">
+            Sub-Total: ₹{totalPrice.toFixed(2)}
+          </h2>
+          
         </>
       )}
     </div>

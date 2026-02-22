@@ -3,9 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 //import { BsHeart, BsCart3 } from "react-icons/bs";
 import "./navbar.css";
+import { useContext } from "react";
+import { ThemeContext } from "./Themecontext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const {theme, toggleTheme } = useContext(ThemeContext)
   const token = localStorage.getItem("token");
   const navigate = useNavigate()
 
@@ -36,6 +39,9 @@ const Navbar = () => {
                 <Link to="/cart" className="nav-links">
                   Cart
                 </Link>
+                <Link to="/profile" className="nav-links">
+                  Profile
+                </Link>
                 <button onClick={handlelogout}>
                   Logout  
                 </button>
@@ -46,6 +52,9 @@ const Navbar = () => {
               </Link>
             )}
           </>
+          <button className="theme-btn" onClick={toggleTheme}>
+            {theme === "light" ? "🌙 Dark" : "☀ Light"}
+          </button>
         </div>
 
         <div className="hamb" onClick={hambToggle}>
