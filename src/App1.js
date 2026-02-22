@@ -10,6 +10,7 @@ import Home from "./Pages/Home";
 import CartPage from "./Pages/Cart";
 import Profile from "./components/Profile";
 import { ThemeProvider } from "./components/Themecontext";
+import OrderForm from "./components/Orderform";
 const App1 = () => {
   return (
     <div>
@@ -50,6 +51,7 @@ const App1 = () => {
                 </ProtectedRoute>
               }
             />
+            <Route path="/order" element={<OrderForm/>} />
             <Route path="/login" element={<Login />} />
           </Routes>
           <Footer />

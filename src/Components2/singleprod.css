@@ -1,5 +1,5 @@
 .singleprod-container {
-  background-color: #f3f3f3;
+  background-color: var(--card-bg);
   padding: 100px 10px;
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 .singleprod-wrapper {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   display: flex;
   gap: 50px;
   padding: 40px;
@@ -67,7 +67,7 @@
 .singleprod-desc {
   margin-top: 15px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
   font-size: 15px;
 }
 

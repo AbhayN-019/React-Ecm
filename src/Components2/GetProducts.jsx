@@ -53,8 +53,6 @@ const Products = () => {
 
   return (
     <div>
-      <br /><br /><br />
-
       <div className="card-box">
         {prod.map((item) => (
           <div className="prod-card" key={item.id}>

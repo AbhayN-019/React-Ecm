@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: 30px;
   padding: 40px;
-  background: #f3f3f3;
+  background: var(--card-bg);
   justify-content: center;
 }
 
@@ -11,7 +11,7 @@
 .prod-card {
   position: relative;
   width: 240px;
-  background: #fff;
+   background-color: var(--card-bg);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -55,7 +55,7 @@
 .prod-card p {
   font-size: 14px;
   margin: 4px 0;
-  color: #333;
+  color: var(--text-color);
 }
 
 /* Add To Cart Button (Hidden Initially) */
@@ -68,8 +68,8 @@
   padding: 12px;
   border: none;
   border-radius: 25px;
-  background: #00ac7c;
-  color: white;
+  background: #006aac;
+  color: var(--text-color);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -84,7 +84,7 @@
 
 /* Button Hover */
 .prod-card button:hover {
-  background: #008f67;
+  background: #dfac07;
 }
 
 /* Click Effect */
@@ -128,13 +128,14 @@
   flex-direction: row;
   align-items: center;
   gap: 4px;
+  background-color: var(--card-bg);
 }
 
 /* Quantity Label */
 .qty-box label {
   font-size: 12px;
   font-weight: 600;
-  color: #555;
+  color: var(--text-color);
 }
 
 /* Quantity Input */
@@ -142,11 +143,12 @@
   width: 55px;
   padding: 6px;
   border-radius: none;
-  border: 1px none #ccc;
+  border: 1px none var(--text-color);
   text-align: center;
   font-size: 14px;
   outline: none;
   transition: 0.2s ease;
+  background-color: var(--card-bg);
 }
 
 /* Input Focus Effect */

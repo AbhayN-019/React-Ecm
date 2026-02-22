@@ -3,14 +3,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  background-color: var(--card-bg);
 }
 
 .profile-card {
   width: 350px;
   padding: 30px;
   border-radius: 20px;
-  background: white;
+  background-color: var(--card-bg);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: 0.3s ease;
@@ -27,7 +27,7 @@
 .profile-avatar {
   width: 80px;
   height: 80px;
-  background: linear-gradient(45deg, #fd5949, #d6249f, #285aeb);
+  background: linear-gradient(45deg, #e31b09, #625f61, #1246e3);
   color: rgb(0, 0, 0);
   font-size: 32px;
   font-weight: bold;

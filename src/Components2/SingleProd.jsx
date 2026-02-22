@@ -1,12 +1,13 @@
 import axios from "axios";
 import "./singleprod.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 
 const SingleProduct = () => {
   const [prod, setProd] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate()
 
   const { id } = useParams();
   //const navigate = useNavigate();
@@ -95,7 +96,7 @@ const SingleProduct = () => {
               className="qty-input"
             />
 
-            <button className="buy-btn">
+            <button className="buy-btn" onClick={() => navigate('/order')}>
               Shop Now
             </button>
           </div>

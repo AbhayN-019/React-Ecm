@@ -1,6 +1,6 @@
 .cart-container {
   padding: 40px 60px;
-  background: #f4f4f4;
+  background-color: var(--card-bg);
   min-height: 100vh;
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
+   background-color: var(--card-bg);
   padding: 20px 25px;
   border-radius: 12px;
   margin-bottom: 25px;
@@ -39,7 +39,7 @@
 .cart-price {
   font-weight: 500;
   margin: 6px 0 12px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .cart-actions {
@@ -59,7 +59,7 @@
   height: 26px;
   border-radius: 50%;
   border: 1px solid #ccc;
-  background: #7f7b7b;
+   background-color: var(--card-bg);
   font-size: 14px;
   cursor: pointer;
   transition: 0.2s ease;
@@ -82,7 +82,7 @@
   margin-top: 15px;
   padding: 8px 12px;
   border-radius: 18px;
-  color: white;
+  color: var(--text-color);
   font-size: 12px;
   cursor: pointer;
   transition: 0.3s ease;
@@ -94,7 +94,7 @@
 }
 
 .order-btn{
-  background: #d19f07;
+  background: #e1ad12;
   border: none;
   margin: 15px;
   padding: 8px 12px;

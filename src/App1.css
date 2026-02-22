@@ -12,62 +12,40 @@ html, body, #root {
 .main-content {
   flex: 1;
 }
-/* ========================= */
-/* THEME VARIABLES */
-/* ========================= */
-
+/* LIGHT THEME */
 body.light {
-  --bg-color: #f4f6f9;
-  --text-color: #111111;
-  --card-bg: #ffffff;
-  --nav-bg: #ffffff;
-  --btn-bg: #0095f6;
-  --btn-text: #ffffff;
+  background-color: #f4f6f9;
+  color: #111;
 }
 
+/* DARK THEME */
 body.dark {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --card-bg: #1e1e1e;
-  --nav-bg: #1f1f1f;
-  --btn-bg: #333333;
-  --btn-text: #ffffff;
+  background-color: #121212;
+  color: #ffffff;
 }
 
-/* ========================= */
-/* GLOBAL APPLY */
-/* ========================= */
-
+/* Smooth transition */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
   transition: all 0.3s ease;
 }
 
-/* Navbar */
-.navbar-container {
-  background-color: var(--nav-bg);
-  color: var(--text-color);
+/* Example adjustments */
+body.dark .navbar-container {
+  background-color: #1f1f1f;
 }
 
-/* Cards (Profile, Products etc.) */
-.profile-card,
-.product-card,
-.cart-card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
+body.dark .profile-card,
+body.dark .product-card {
+  background-color: #1e1e1e;
+  color: white;
 }
 
-/* Buttons */
-button {
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  border: none;
-}
-
-/* Theme Button */
 .theme-btn {
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 20px;
+  border: none;
   cursor: pointer;
+  background: #0095f6;
+  color: white;
+  margin-left: 15px;
 }

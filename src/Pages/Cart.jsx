@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./cart.css";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -46,7 +48,6 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <br /><br />
       <h1>Your Shopping Cart</h1>
 
       {cartItems.length === 0 ? (
@@ -89,7 +90,7 @@ const Cart = () => {
                 >
                   Remove
                 </button>
-                <button className="order-btn"
+                <button className="order-btn" onClick={() =>navigate("/order")}
                 >
                   Place Order
                 </button>

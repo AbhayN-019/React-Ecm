@@ -1,12 +1,12 @@
 .login-container {
-  min-height: 100vh;
+  min-height: 61vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f7fa;
+  background-color: var(--card-bg);
 }
 .login-box {
-  background-color: #ffffff;
+   background-color: var(--card-bg);
   padding: 30px 50px;
   width: 350px;
   border-radius: 15px;
@@ -17,7 +17,7 @@
   margin-bottom: 40px;
   margin-top: 15px;
   font-size: 1.4rem;
-  color: #333;
+  color: var(--text-color);
 }
 .login-box label {
   font-size: 0.9rem;
@@ -41,7 +41,7 @@
   padding: 10px;
   margin-left: 125px;
   background-color: #000000;
-  color: white;
+  color: var(--text-color);
   border: none;
   border-radius: 6px;
   font-size: 0.95rem;

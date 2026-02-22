@@ -1,6 +1,6 @@
 .home {
   width: 100%;
-  background-color: #f3f3f3;
+   background-color: var(--card-bg);
 }
 
 .hero {
@@ -22,7 +22,7 @@
   top: 50%;
   left: 6%;
   transform: translateY(-50%);
-  color: #fff;
+  color: var(--text-color);
   max-width: 400px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .category-card {
-  background: white;
+   background-color: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -85,7 +85,7 @@
 
 .info-strip {
   background: #232f3e;
-  color: white;
+  color: var(--text-color);
   display: flex;
   justify-content: space-around;
   padding: 30px 10px;
